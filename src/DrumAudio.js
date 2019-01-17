@@ -5,21 +5,23 @@ class DrumAudio extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-    }
-    this.url = this.props.url;
-    this.audio = new Audio(this.url);
-}
+    this.audio = React.createRef();
+    this.play = this.play.bind(this);
+  }
+
+  componentDidMount() {
+    console.log("mount");
+  }
 
   play = () => {
-    this.audio.play();
+    this.audio.current.play();
   }
 
   render() {
   return (
-    <div>
-      <button onClick={this.play}>Play</button>
-      <audio className="clip" src={this.props.value + ".ogg"} type="audio/ogg"></audio>
+    <div className="drum-pad" id={this.props.id} onClick={this.play}>
+      <button>{this.props.id}</button>
+      <audio src={this.props.url} ref={this.audio} className="clip" id={this.props.id}></audio>
     </div>
     );
   }

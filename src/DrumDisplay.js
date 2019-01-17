@@ -5,7 +5,7 @@ class DrumDisplay extends Component {
   render() {
     return (
       <div id="display">
-        <p>Display</p>
+        <input type="text" name=""/>
       </div>
     );
   }
