@@ -9,17 +9,15 @@ class DrumAudio extends Component {
     this.play = this.play.bind(this);
   }
 
-  componentDidMount() {
-    console.log("mount");
-  }
-
   play = () => {
-    this.audio.current.play();
+    //this.audio.current.play();
+    //this.props.displaySound(this.props.id);
+    this.props.playSound(this.props.id, this.audio.current);
   }
 
   render() {
   return (
-    <div className="drum-pad" id={this.props.id} onClick={this.play}>
+    <div className="drum-pad" id={"drum-" + this.props.id} onClick={this.play}>
       <button>{this.props.id}</button>
       <audio src={this.props.url} ref={this.audio} className="clip" id={this.props.id}></audio>
     </div>

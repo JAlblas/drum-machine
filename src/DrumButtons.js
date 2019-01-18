@@ -19,7 +19,7 @@ class DrumButtons extends Component {
     return (
       <div id="drum-pads">
         {letters.map((value, index) => {
-          return <DrumAudio id={value} key={index} url={samples[index]} />
+          return <DrumAudio id={value} key={index} url={samples[index]} playSound={this.props.playSound} />
         })}
       </div>
     )
