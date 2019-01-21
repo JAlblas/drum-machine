@@ -14,11 +14,12 @@ code {
 }
 
 #drum-machine {
-  background-color: #EFEFEF;
+  background-color: #3F6F2A;
   display: grid;
-  width: 960px;
+  width: 600px;
   grid-template-columns: 30% 70%;
   grid-template-rows: 25% 75%;
+  padding: 25px;
 }
 
 #display {
@@ -28,6 +29,7 @@ code {
   color: #FFF;
   background-color: #000;
   text-align: center;
+  border: 1px solid #FFF;
 
   p {
     font-size: 2em;
